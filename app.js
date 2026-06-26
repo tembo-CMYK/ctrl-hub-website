@@ -570,6 +570,7 @@ function initSpotlightScrollAnimation() {
   const overlay14 = document.getElementById('spot-info-14');
   const overlay7 = document.getElementById('spot-info-7');
 
+  if (window.innerWidth <= 760) return;
   if (!spotWrapper || !spot || !spotVisuals) return;
 
   const tl = gsap.timeline({

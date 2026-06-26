@@ -471,8 +471,10 @@ nav.s{padding:16px 56px;background:rgba(6,14,13,0.8);backdrop-filter:blur(24px);
   z-index: 1;
   pointer-events: none;
 }
-.spot-img:hover::before {
-  transform: scale(1.06);
+@media (hover: hover) {
+  .spot-img:hover::before {
+    transform: scale(1.06);
+  }
 }
 
 /* Interactive tags styled as luxury glass pills */
@@ -498,17 +500,19 @@ nav.s{padding:16px 56px;background:rgba(6,14,13,0.8);backdrop-filter:blur(24px);
   cursor: pointer;
   transition: all 0.4s var(--ease);
 }
-.spot-img:hover .spot-tag {
-  background: var(--t);
-  border-color: var(--tb);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(11, 115, 115, 0.35);
+@media (hover: hover) {
+  .spot-img:hover .spot-tag {
+    background: var(--t);
+    border-color: var(--tb);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(11, 115, 115, 0.35);
+  }
+  .spot-img:hover .spot-tag svg {
+    transform: translateX(4px);
+  }
 }
 .spot-tag svg {
   transition: transform 0.3s var(--ease);
-}
-.spot-img:hover .spot-tag svg {
-  transform: translateX(4px);
 }
 
 /* Ambient Sound Wave Visualizer */
@@ -1481,7 +1485,39 @@ button:disabled {
   display: contents; /* default for desktop */
 }
 
+/* Hide scrollbars globally on category tabs */
+.nlinks::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+.nlinks {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+
 @media (max-width: 760px) {
+  /* Prevent background text bleed-through under mobile nav */
+  nav {
+    background: rgba(6, 14, 13, 0.94) !important;
+    backdrop-filter: blur(24px) !important;
+    -webkit-backdrop-filter: blur(24px) !important;
+    border-bottom: 1px solid rgba(19, 168, 168, 0.14) !important;
+  }
+
+  /* Increase top padding on Hero to completely clear the wrapped double-row mobile navigation */
+  .hero {
+    padding-top: 180px !important;
+  }
+
+  /* Configure scrolling links inside wrapper */
+  .nlinks {
+    display: flex !important;
+    overflow-x: auto !important;
+    width: 100% !important;
+    padding-right: 48px !important; /* offset padding to make space for gradient fade cue */
+  }
+
   .nlinks-wrapper {
     display: block !important;
     order: 3;
@@ -1494,8 +1530,8 @@ button:disabled {
     top: 0;
     right: 0;
     bottom: 0;
-    width: 40px;
-    background: linear-gradient(90deg, transparent, var(--dk));
+    width: 48px;
+    background: linear-gradient(90deg, transparent, rgba(6, 14, 13, 0.98));
     pointer-events: none;
     z-index: 2;
   }
