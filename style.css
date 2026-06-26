@@ -1330,4 +1330,180 @@ textarea.form-control{resize:none;height:100px}
   }
 }
 
+/* ==========================================================================
+   MOBILE UI USABILITY & ERGONOMIC OVERRIDES (48px Rule, Typography, States)
+   ========================================================================== */
+
+/* 1. Typography defaults for better legibility on mobile */
+@media (max-width: 760px) {
+  body {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+}
+
+/* 2. Interactive state scaling & animations for active/disabled states */
+.npill:active, 
+.hbp:active, 
+.btn-checkout:active, 
+.btn-submit:active, 
+.padd:active, 
+.modal-details-add:active, 
+.spotlight-add-btn:active,
+.showcase-arrow:active {
+  transform: scale(0.97) !important;
+  transition: transform 0.1s var(--ease) !important;
+}
+
+.btn-checkout:disabled, 
+.btn-submit:disabled, 
+.npill:disabled,
+button:disabled {
+  opacity: 0.45 !important;
+  filter: grayscale(1) !important;
+  cursor: not-allowed !important;
+  pointer-events: none !important;
+}
+
+/* 3. Tap Target optimizations (The 48px Touch Rule) */
+@media (max-width: 760px) {
+  /* Navigation Link targets */
+  .nlinks {
+    gap: 12px;
+    padding: 6px 12px 10px;
+    mask-image: linear-gradient(90deg, black 85%, transparent 100%);
+    -webkit-mask-image: linear-gradient(90deg, black 85%, transparent 100%);
+  }
+  
+  .nlinks a {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0 20px !important;
+    font-size: 16px !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .nlinks a.active {
+    background: var(--t) !important;
+    color: var(--wh) !important;
+    border-color: var(--t) !important;
+  }
+
+  /* Cart quantity steppers and delete button target sizing */
+  .cart-item-ctrls {
+    gap: 12px;
+    margin-top: 12px;
+  }
+
+  .btn-qty {
+    width: 44px !important;
+    height: 44px !important;
+    font-size: 16px !important;
+  }
+
+  .qty-val {
+    font-size: 16px !important;
+  }
+
+  .btn-del {
+    font-size: 16px !important;
+    padding: 12px 16px !important;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Core CTA heights */
+  .hbp, .btn-checkout, .btn-submit, .modal-details-add, .spotlight-add-btn {
+    min-height: 52px !important;
+    font-size: 16px !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 28px !important;
+  }
+
+  /* Plus add target on cards */
+  .padd {
+    width: 48px !important;
+    height: 48px !important;
+    font-size: 20px !important;
+  }
+
+  /* Nav CTAs & close buttons */
+  .ncta {
+    gap: 16px;
+  }
+
+  .ncta .nbtn {
+    min-height: 48px;
+    padding: 0 12px;
+    display: inline-flex;
+    align-items: center;
+    font-size: 16px !important;
+  }
+
+  .modal-close-btn, .btn-close {
+    width: 48px !important;
+    height: 48px !important;
+    font-size: 28px !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Typography scale fixes for mobile body texts */
+  .pspec, .wd, .fbrand p, .flinks a, .modal-details-spec, .spot-text {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+  }
+
+  /* Prevents iOS Safari input focus auto-zoom */
+  .form-control, .search-input, .nlinput {
+    font-size: 16px !important;
+    min-height: 48px !important;
+    border-radius: 8px !important;
+  }
+
+  /* Showcase slider arrow size */
+  .showcase-arrow {
+    width: 48px !important;
+    height: 48px !important;
+    font-size: 18px !important;
+  }
+}
+
+/* Scrollable tabs fading cue & wrapper */
+.nlinks-wrapper {
+  position: relative;
+  display: contents; /* default for desktop */
+}
+
+@media (max-width: 760px) {
+  .nlinks-wrapper {
+    display: block !important;
+    order: 3;
+    width: 100%;
+    position: relative;
+  }
+  .nlinks-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 40px;
+    background: linear-gradient(90deg, transparent, var(--dk));
+    pointer-events: none;
+    z-index: 2;
+  }
+}
+
+
+
+
+
+
 
