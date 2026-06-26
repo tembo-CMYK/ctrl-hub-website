@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ctrl Hub - Your Tech Life, Simplified</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <script type="module" crossorigin src="./assets/index-Dup1_LU6.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-DGESqpvA.css">
+</head>
+<body>
+
+
+  <!-- Backdrop overlay for modal & drawer -->
+  <div class="backdrop" id="backdrop"></div>
+
+  <!-- Cursor particles -->
+  <div id="cur"></div>
+  <div id="cuf"></div>
+
+  <!-- Add to Cart Toast Notification -->
+  <div class="toast" id="toast">Added to cart</div>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <a href="#" class="nl">
+      <div class="ni">Ctrl</div>
+      <span class="nn">Hub</span>
+    </a>
+    <ul class="nlinks">
+      <li><a href="#/laptops">Laptops</a></li>
+      <li><a href="#/phones">Phones</a></li>
+      <li><a href="#/desktops">Desktops</a></li>
+      <li><a href="#/printers">Printers</a></li>
+      <li><a href="#/accessories">Accessories</a></li>
+    </ul>
+    <div class="ncta">
+      <button class="nbtn" onclick="sendSearch()" aria-label="Search products">Search</button>
+      <button class="nbtn" id="cartBtn" aria-label="Cart">Cart <span id="cartCount">0</span></button>
+      <button class="npill">Get In Touch</button>
+    </div>
+  </nav>
+
+  <main id="home-view">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hbg">
+      <video autoplay loop muted playsinline class="hero-video">
+        <source src="./assets/Let_s_extended_the_first_video-Dx1fpDGW.mp4" type="video/mp4">
+      </video>
+      <div class="hbg-orb o1"></div>
+      <div class="hbg-orb o2"></div>
+      <div class="hgrid"></div>
+    </div>
+    <div class="hc">
+      <p class="heyebrow">Zambia's Premium Tech Store</p>
+      <h1 class="htitle">
+        <span class="hl1">Your Tech Life,</span>
+        <span class="hl2">Simplified.</span>
+      </h1>
+      <p class="hsub">Curated laptops, desktops, phones, printers &amp; accessories. Genuine products, expert guidance, and a shopping experience built for you.</p>
+      <div class="hbtns">
+        <button class="hbp" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
+          Shop Now
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="hbs" onclick="document.getElementById('categories').scrollIntoView({behavior:'smooth'})">
+          <span class="arr">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 6h10M7 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          Browse Collection
+        </button>
+      </div>
+      <div class="hstats">
+        <div class="hsi"><div class="hsn">500+</div><div class="hsl">Products</div></div>
+        <div class="hsi"><div class="hsn">50+</div><div class="hsl">Top Brands</div></div>
+        <div class="hsi"><div class="hsn">10K+</div><div class="hsl">Customers</div></div>
+      </div>
+    </div>
+    <div class="hv">
+      <div class="fbadge fb1">
+        <div class="glass-glare"></div>
+        <div class="fb-header">
+          <div class="fb-icon">💻</div>
+          <span class="fb-title">MacBook Pro</span>
+        </div>
+        <div class="fb-spec">M3 Pro chip · In Stock</div>
+        <div class="fb-footer">
+          <span class="fb-price">K28,500</span>
+          <span class="fb-status-tag">Free Shipping</span>
+        </div>
+      </div>
+      <div class="fbadge fb2">
+        <div class="glass-glare"></div>
+        <div class="fb-header">
+          <div class="fb-icon">🚚</div>
+          <span class="fb-title">Lusaka Delivery</span>
+        </div>
+        <div class="fb-spec">Next-day guaranteed delivery</div>
+        <div class="fb-footer">
+          <span class="fb-highlight">Free over K15,000</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ttrack" id="ttrack">
+      <span class="ti">Laptops <span class="tdot">&middot;</span></span>
+      <span class="ti">Desktops <span class="tdot">&middot;</span></span>
+      <span class="ti">Mobile Phones <span class="tdot">&middot;</span></span>
+      <span class="ti">Printers <span class="tdot">&middot;</span></span>
+      <span class="ti">Accessories <span class="tdot">&middot;</span></span>
+      <span class="ti">Genuine Products <span class="tdot">&middot;</span></span>
+      <span class="ti">Expert Support <span class="tdot">&middot;</span></span>
+      <span class="ti">Lusaka Delivery <span class="tdot">&middot;</span></span>
+      <span class="ti">Laptops <span class="tdot">&middot;</span></span>
+      <span class="ti">Desktops <span class="tdot">&middot;</span></span>
+      <span class="ti">Mobile Phones <span class="tdot">&middot;</span></span>
+      <span class="ti">Printers <span class="tdot">&middot;</span></span>
+      <span class="ti">Accessories <span class="tdot">&middot;</span></span>
+      <span class="ti">Genuine Products <span class="tdot">&middot;</span></span>
+      <span class="ti">Expert Support <span class="tdot">&middot;</span></span>
+      <span class="ti">Lusaka Delivery <span class="tdot">&middot;</span></span>
+    </div>
+  </div>
+
+  <!-- CATEGORIES -->
+  <section class="cats" id="categories">
+    <p class="slbl rv">Shop by Category</p>
+    <div class="cgrid">
+      <div class="cc has-img rv d1"><img class="cimg" src="./assets/laptop-B2bz4g7a.jpg" alt="Laptop category" loading="lazy"><span class="cico"><svg viewBox="0 0 24 24" fill="none"><path d="M4 6.5h16v10H4zM2.5 19.5h19" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div class="cn">Laptops</div><div class="cct">120+ models</div><div class="carrow">&rarr;</div></div>
+      <div class="cc has-img rv d2"><img class="cimg" src="./assets/desktop-B1EsDItn.jpg" alt="Desktop category" loading="lazy"><span class="cico"><svg viewBox="0 0 24 24" fill="none"><path d="M5 5h14v10H5zM9 20h6M12 15v5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div class="cn">Desktops</div><div class="cct">80+ models</div><div class="carrow">&rarr;</div></div>
+      <div class="cc has-img rv d3"><img class="cimg" src="./assets/phone-B3Cqq5L1.jpg" alt="Mobile phones category" loading="lazy"><span class="cico"><svg viewBox="0 0 24 24" fill="none"><path d="M8 3.5h8a2 2 0 0 1 2 2v13a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-13a2 2 0 0 1 2-2zM11 17.5h2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div class="cn">Mobile Phones</div><div class="cct">200+ models</div><div class="carrow">&rarr;</div></div>
+      <div class="cc has-img rv d4"><img class="cimg" src="./assets/printer-CVFG1nnm.jpg" alt="Printer category" loading="lazy"><span class="cico"><svg viewBox="0 0 24 24" fill="none"><path d="M7 8V4h10v4M7 17H5a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2M7 14h10v6H7z" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div class="cn">Printers</div><div class="cct">60+ models</div><div class="carrow">&rarr;</div></div>
+      <div class="cc has-img rv d5"><img class="cimg" src="./assets/earbuds-ClILvRlh.jpg" alt="Accessories category" loading="lazy"><span class="cico"><svg viewBox="0 0 24 24" fill="none"><path d="M4 13a8 8 0 0 1 16 0M4 13v4a2 2 0 0 0 2 2h2v-7H6a2 2 0 0 0-2 2M20 13v4a2 2 0 0 1-2 2h-2v-7h2a2 2 0 0 1 2 2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div class="cn">Accessories</div><div class="cct">500+ items</div><div class="carrow">&rarr;</div></div>
+    </div>
+  </section>
+
+  <!-- AUDIO SPOTLIGHT -->
+  <div class="spot-wrapper">
+    <section class="spot">
+      <div class="spot-copy">
+        <div class="spot-copy-base">
+          <p class="slbl rv">Audio Spotlight</p>
+          <h2 class="spot-title rv">Big sound for every kind of day.</h2>
+          <p class="spot-text rv">From discreet earbuds for calls and commutes to immersive headphones for deep work, Ctrl Hub curates audio that looks as good as it sounds.</p>
+        </div>
+        
+        <!-- Animated specs detail layers -->
+        <div class="spot-info-overlay" id="spot-info-14">
+          <div class="spot-info-content">
+            <span class="spot-info-cat">AirPods Pro 2</span>
+            <h3 class="spot-info-title">Sound that adapts to you.</h3>
+            <p class="spot-info-desc">H2-powered Adaptive Audio blends Noise Cancellation and Transparency. Six hours of battery life with ANC enabled.</p>
+            <div class="spot-info-price">K3,900</div>
+          </div>
+        </div>
+        <div class="spot-info-overlay" id="spot-info-7">
+          <div class="spot-info-content">
+            <span class="spot-info-cat">Sony WH-1000XM5</span>
+            <h3 class="spot-info-title">Distraction-free listening.</h3>
+            <p class="spot-info-desc">Industry-leading noise cancellation with eight microphones and Auto NC Optimizer. Up to 30 hours of battery life.</p>
+            <div class="spot-info-price">K4,200</div>
+          </div>
+        </div>
+
+        <!-- Animated Sound Wave Visualizer -->
+        <div class="sound-waves" aria-hidden="true">
+          <span class="sw-bar"></span>
+          <span class="sw-bar"></span>
+          <span class="sw-bar"></span>
+          <span class="sw-bar"></span>
+          <span class="sw-bar"></span>
+          <span class="sw-bar"></span>
+          <span class="sw-bar"></span>
+          <span class="sw-bar"></span>
+          <span class="sw-bar"></span>
+          <span class="sw-bar"></span>
+        </div>
+      </div>
+      <div class="spot-visuals" aria-label="Featured wireless audio products">
+        <div class="spot-img one">
+          <button class="spot-tag">
+            Wireless Earbuds
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="margin-left:4px;display:inline-block;vertical-align:middle"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <div class="spot-img two">
+          <button class="spot-tag">
+            Everyday Listening
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="margin-left:4px;display:inline-block;vertical-align:middle"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- FEATURED PRODUCTS -->
+  <section class="prods" id="products">
+    <div class="ph">
+      <div>
+        <p class="slbl rv" style="color:var(--t)">Featured Products</p>
+        <h2 class="stitle rv">Handpicked <em>for you</em></h2>
+      </div>
+      <a href="#" class="vlink rv" onclick="event.preventDefault(); filterProducts('all');">
+        View all products
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8h12M9 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+    <div class="pgrid">
+      <div class="pc rv d1">
+        <div class="glass-glare"></div>
+        <div class="pimg">
+          <img src="./assets/Laptop%201-C-jtT7cv.png" alt="Apple MacBook Pro 14 inch" loading="lazy">
+          <div class="pimg-glow"></div>
+          <div class="pbadge new">New</div>
+          <div class="pimg-specs">
+            <ul class="pimg-specs-list">
+              <li><span>Processor:</span> Apple M3 (8-core)</li>
+              <li><span>Memory:</span> 16GB Unified RAM</li>
+              <li><span>Display:</span> 14.2" Liquid Retina</li>
+            </ul>
+          </div>
+        </div>
+        <div class="pinfo">
+          <div class="pcat">Laptop</div>
+          <div class="pname">Apple MacBook Pro 14"</div>
+          <div class="pspec">M3 chip &middot; 16GB RAM &middot; 512GB SSD</div>
+          <div class="pfoot"><div class="pprice"><span>K</span>28,500</div><button class="padd">+</button></div>
+        </div>
+      </div>
+      <div class="pc rv d2">
+        <div class="glass-glare"></div>
+        <div class="pimg">
+          <img src="./assets/Phone%202-DkoIMj_S.png" alt="Samsung Galaxy S24 Ultra" loading="lazy">
+          <div class="pimg-glow"></div>
+          <div class="pbadge">Hot</div>
+          <div class="pimg-specs">
+            <ul class="pimg-specs-list">
+              <li><span>Processor:</span> Snapdragon 8 Gen 3</li>
+              <li><span>Memory:</span> 12GB LPDDR5X</li>
+              <li><span>Camera:</span> 200MP Quad Cam</li>
+            </ul>
+          </div>
+        </div>
+        <div class="pinfo">
+          <div class="pcat">Mobile Phone</div>
+          <div class="pname">Samsung Galaxy S24 Ultra</div>
+          <div class="pspec">12GB RAM &middot; 256GB &middot; 200MP camera</div>
+          <div class="pfoot"><div class="pprice"><span>K</span>18,200</div><button class="padd">+</button></div>
+        </div>
+      </div>
+      <div class="pc rv d3">
+        <div class="glass-glare"></div>
+        <div class="pimg">
+          <img src="./assets/Desktop%201-mbN6jjs7.png" alt="Dell OptiPlex desktop" loading="lazy">
+          <div class="pimg-glow"></div>
+          <div class="pimg-specs">
+            <ul class="pimg-specs-list">
+              <li><span>Processor:</span> Intel Core i7-11700</li>
+              <li><span>Memory:</span> 16GB DDR4 RAM</li>
+              <li><span>Storage:</span> 512GB NVMe SSD</li>
+            </ul>
+          </div>
+        </div>
+        <div class="pinfo">
+          <div class="pcat">Desktop</div>
+          <div class="pname">Dell OptiPlex 7090</div>
+          <div class="pspec">i7 11th Gen &middot; 16GB &middot; 512GB SSD</div>
+          <div class="pfoot"><div class="pprice"><span>K</span>24,800</div><button class="padd">+</button></div>
+        </div>
+      </div>
+      <div class="pc rv d4">
+        <div class="glass-glare"></div>
+        <div class="pimg">
+          <img src="./assets/Printer%201-C1Ee013e.png" alt="HP LaserJet Pro printer" loading="lazy">
+          <div class="pimg-glow"></div>
+          <div class="pbadge new">New</div>
+          <div class="pimg-specs">
+            <ul class="pimg-specs-list">
+              <li><span>Type:</span> Monochrome Laser</li>
+              <li><span>Speed:</span> Up to 38 ppm</li>
+              <li><span>Features:</span> Auto Duplexing</li>
+            </ul>
+          </div>
+        </div>
+        <div class="pinfo">
+          <div class="pcat">Printer</div>
+          <div class="pname">HP LaserJet Pro M404dn</div>
+          <div class="pspec">Duplex &middot; 38ppm &middot; WiFi &middot; USB</div>
+          <div class="pfoot"><div class="pprice"><span>K</span>7,900</div><button class="padd">+</button></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Second row -->
+    <div class="pgrid" style="margin-top:18px">
+      <div class="pc rv d1">
+        <div class="glass-glare"></div>
+        <div class="pimg">
+          <img src="./assets/Laptop%202-Cs5rjd3E.png" alt="Lenovo ThinkPad X1 Carbon" loading="lazy">
+          <div class="pimg-glow"></div>
+          <div class="pimg-specs">
+            <ul class="pimg-specs-list">
+              <li><span>Processor:</span> Intel Core i7-1355U</li>
+              <li><span>Memory:</span> 16GB LPDDR5X RAM</li>
+              <li><span>Storage:</span> 1TB NVMe Gen4 SSD</li>
+            </ul>
+          </div>
+        </div>
+        <div class="pinfo">
+          <div class="pcat">Laptop</div>
+          <div class="pname">Lenovo ThinkPad X1 Carbon</div>
+          <div class="pspec">i7 13th Gen &middot; 16GB &middot; 1TB SSD</div>
+          <div class="pfoot"><div class="pprice"><span>K</span>22,900</div><button class="padd">+</button></div>
+        </div>
+      </div>
+      <div class="pc rv d2">
+        <div class="glass-glare"></div>
+        <div class="pimg">
+          <img src="./assets/Phhone%201-Br-kImnV.png" alt="iPhone 15 Pro Max" loading="lazy">
+          <div class="pimg-glow"></div>
+          <div class="pbadge new">New</div>
+          <div class="pimg-specs">
+            <ul class="pimg-specs-list">
+              <li><span>Processor:</span> Apple A17 Pro</li>
+              <li><span>Display:</span> 6.7" Super Retina</li>
+              <li><span>Storage:</span> 256GB NVMe SSD</li>
+            </ul>
+          </div>
+        </div>
+        <div class="pinfo">
+          <div class="pcat">Mobile Phone</div>
+          <div class="pname">iPhone 15 Pro Max</div>
+          <div class="pspec">A17 Pro &middot; 256GB &middot; Titanium</div>
+          <div class="pfoot"><div class="pprice"><span>K</span>24,500</div><button class="padd">+</button></div>
+        </div>
+      </div>
+      <div class="pc rv d3">
+        <div class="glass-glare"></div>
+        <div class="pimg">
+          <img src="./assets/Accessory%201-DzDYl_cw.png" alt="Sony WH-1000XM5 headphones" loading="lazy">
+          <div class="pimg-glow"></div>
+          <div class="pimg-specs">
+            <ul class="pimg-specs-list">
+              <li><span>Type:</span> Wireless Over-Ear</li>
+              <li><span>Battery:</span> Up to 30 Hours</li>
+              <li><span>Audio:</span> LDAC High-Res</li>
+            </ul>
+          </div>
+        </div>
+        <div class="pinfo">
+          <div class="pcat">Accessory</div>
+          <div class="pname">Sony WH-1000XM5</div>
+          <div class="pspec">ANC &middot; 30hr battery &middot; LDAC</div>
+          <div class="pfoot"><div class="pprice"><span>K</span>4,200</div><button class="padd">+</button></div>
+        </div>
+      </div>
+      <div class="pc rv d4">
+        <div class="glass-glare"></div>
+        <div class="pimg">
+          <img src="./assets/Desktop%202-D-CSBA1P.png" alt="Apple Mac Mini M2 Pro" loading="lazy">
+          <div class="pimg-glow"></div>
+          <div class="pimg-specs">
+            <ul class="pimg-specs-list">
+              <li><span>Processor:</span> Apple M2 Pro</li>
+              <li><span>Memory:</span> 16GB Unified RAM</li>
+              <li><span>Storage:</span> 512GB PCIe SSD</li>
+            </ul>
+          </div>
+        </div>
+        <div class="pinfo">
+          <div class="pcat">Desktop</div>
+          <div class="pname">Apple Mac Mini M2 Pro</div>
+          <div class="pspec">M2 Pro &middot; 16GB &middot; 512GB SSD</div>
+          <div class="pfoot"><div class="pprice"><span>K</span>19,400</div><button class="padd">+</button></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDITORIAL -->
+  <section class="ed" id="about">
+    <div class="ed-inner">
+      <p class="slbl rv">About Ctrl Hub</p>
+      <p class="ed-text rv">
+        We believe technology should feel <em>effortless.</em> Ctrl Hub brings Zambia the finest tech - genuine products, expert guidance, and a shopping experience that puts your needs first.
+      </p>
+      <div class="edstats">
+        <div class="rv d1">
+          <div class="esn"><span class="counter" data-t="500">0</span><span class="suf">+</span></div>
+          <div class="esl">Products in our catalogue, from entry-level to premium</div>
+        </div>
+        <div class="rv d2">
+          <div class="esn"><span class="counter" data-t="50">0</span><span class="suf">+</span></div>
+          <div class="esl">Global and local brands we're proud to carry</div>
+        </div>
+        <div class="rv d3">
+          <div class="esn"><span class="counter" data-t="10">0</span><span class="suf">K+</span></div>
+          <div class="esl">Happy customers served across Lusaka and beyond</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRANDS MARQUEE -->
+  <div class="brands" aria-label="Brands we carry">
+    <div class="brand-track">
+      <span class="brand-item">Apple</span>
+      <span class="brand-item">Samsung</span>
+      <span class="brand-item">Dell</span>
+      <span class="brand-item">HP</span>
+      <span class="brand-item">Lenovo</span>
+      <span class="brand-item">Canon</span>
+      <span class="brand-item">Sony</span>
+      <span class="brand-item">LG</span>
+      <span class="brand-item">Epson</span>
+      <span class="brand-item">Microsoft</span>
+      <span class="brand-item">Asus</span>
+      <span class="brand-item">Acer</span>
+      <span class="brand-item">Apple</span>
+      <span class="brand-item">Samsung</span>
+      <span class="brand-item">Dell</span>
+      <span class="brand-item">HP</span>
+      <span class="brand-item">Lenovo</span>
+      <span class="brand-item">Canon</span>
+      <span class="brand-item">Sony</span>
+      <span class="brand-item">LG</span>
+      <span class="brand-item">Epson</span>
+      <span class="brand-item">Microsoft</span>
+      <span class="brand-item">Asus</span>
+      <span class="brand-item">Acer</span>
+    </div>
+  </div>
+
+  <!-- WHY CTRL HUB -->
+  <section class="why">
+    <p class="slbl rv" style="color:var(--t)">Why Ctrl Hub</p>
+    <h2 class="stitle rv">The smarter way<br>to <em>shop tech.</em></h2>
+    <div class="wgrid">
+      <div class="wc rv d1">
+        <div class="wico"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="wt">100% Genuine Products</div>
+        <div class="wd">Every product is sourced directly from authorised distributors. No counterfeits, no grey market - your peace of mind is guaranteed.</div>
+      </div>
+      <div class="wc rv d2">
+        <div class="wico"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13c4.5-6.5 8.5-9.5 14-9-1 5.5-4 9.5-10 14l-4 1 1-4zM14 7h3M4 20l4-4" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="wt">Fast Lusaka Delivery</div>
+        <div class="wd">Order today, receive tomorrow. Same-day delivery is available in Lusaka for orders placed before 2pm on weekdays.</div>
+      </div>
+      <div class="wc rv d3">
+        <div class="wico"><svg viewBox="0 0 24 24" fill="none"><path d="m14 7 3-3 3 3-3 3M4 20l9-9M12 5 5 5M5 4l4 4" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="wt">Expert After-Sales Support</div>
+        <div class="wd">Our certified technicians are here after the sale. Setup assistance, warranty claims, and repairs - we've got you covered.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="nl-sec">
+    <h2 class="nlt">Stay ahead of the tech curve.</h2>
+    <p class="nls">New arrivals, exclusive deals, and expert tips - straight to your inbox.</p>
+    <div class="nlform">
+      <input type="email" class="nlinput" placeholder="your@email.com">
+      <button class="nlbtn" onclick="this.textContent='Subscribed';this.style.background='#e8f5f5'">Subscribe</button>
+    </div>
+  </section>
+
+  </main>
+
+  <main id="category-view" style="display: none;">
+    <!-- CATEGORY HEADER -->
+    <section class="cat-header" id="catHeader">
+      <div class="cat-header-video-wrap">
+        <video autoplay loop muted playsinline class="cat-header-video" id="catHeaderVideo">
+          <source src="" type="video/mp4">
+        </video>
+        <div class="cat-header-overlay"></div>
+      </div>
+      <div class="cat-header-content">
+        <h1 class="cat-title" id="catTitle">Laptops</h1>
+        <p class="cat-subtitle" id="catSubtitle">Sleek, high-performance machines.</p>
+      </div>
+    </section>
+
+    <!-- CATEGORY FEATURED SHOWCASE -->
+    <section class="cat-featured" id="catFeaturedSection"></section>
+
+    <!-- CATEGORY PRODUCTS -->
+    <section class="cat-products">
+      <div class="pgrid" id="catProductsGrid">
+        <!-- Dynamic Cards -->
+      </div>
+    </section>
+
+    <!-- CATEGORY EDITORIAL -->
+    <section class="cat-editorial" id="catEditorial">
+      <div class="cat-ed-content">
+        <h2 class="cat-ed-title" id="catEdTitle">Built for creators.</h2>
+        <p class="cat-ed-text" id="catEdText">Designed for life.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="fgrid">
+      <div class="fbrand">
+        <a href="#" class="nl" style="display:inline-flex;margin-bottom:2px">
+          <div class="ni">Ctrl</div>
+          <span class="nn">Hub</span>
+        </a>
+        <p>Your Tech Life, Simplified. Zambia's trusted destination for laptops, desktops, mobile phones, printers, and accessories.</p>
+        <div class="fsoc">
+          <div class="fsb">fb</div>
+          <div class="fsb">in</div>
+          <div class="fsb">tw</div>
+          <div class="fsb">ig</div>
+        </div>
+      </div>
+      <div class="fcol">
+        <h4>Products</h4>
+        <ul class="flinks">
+          <li><a href="#/laptops">Laptops</a></li>
+          <li><a href="#/phones">Mobile Phones</a></li>
+          <li><a href="#/desktops">Desktops</a></li>
+          <li><a href="#/printers">Printers</a></li>
+          <li><a href="#/accessories">Accessories</a></li>
+        </ul>
+      </div>
+      <div class="fcol">
+        <h4>Company</h4>
+        <ul class="flinks">
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#" onclick="event.preventDefault(); document.querySelectorAll('.npill')[0].click();">Contact</a></li>
+          <li><a href="#">Partners</a></li>
+        </ul>
+      </div>
+      <div class="fcol">
+        <h4>Support</h4>
+        <ul class="flinks">
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Shipping Policy</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Warranty</a></li>
+          <li><a href="#">Track Order</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fbtm">
+      <p>&copy; 2024 Ctrl Hub Zambia. All rights reserved.</p>
+      <p>Made with care in <span class="tc">Lusaka, Zambia</span></p>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       MODAL & DRAWER MARKUPS
+       ========================================================================== -->
+
+  <!-- Cart Drawer -->
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h3>Shopping Cart</h3>
+      <button class="btn-close" id="cartClose">&times;</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <!-- Generated Dynamically -->
+    </div>
+    <div class="cart-footer">
+      <div class="cart-summary">
+        <span>Subtotal</span>
+        <div class="cart-total"><span>K</span><span id="cartTotal">0</span></div>
+      </div>
+      <button class="btn-checkout" id="btnCheckout" disabled>Secure Checkout</button>
+    </div>
+  </div>
+
+  <!-- Product Detail Modal -->
+  <div class="modal" id="prodModal">
+    <!-- Generated Dynamically -->
+  </div>
+
+  <!-- Search Modal -->
+  <div class="modal search-modal" id="searchModal">
+    <button class="modal-close-btn" onclick="document.getElementById('backdrop').click()">&times;</button>
+    <div class="search-input-wrapper">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+      <input type="text" class="search-input" id="searchInput" placeholder="Search for laptops, phones, printers...">
+    </div>
+    <div class="search-results" id="searchResults">
+      <!-- Generated Dynamically -->
+    </div>
+  </div>
+
+  <!-- Contact Modal -->
+  <div class="modal contact-modal" id="contactModal">
+    <button class="modal-close-btn" id="contactClose">&times;</button>
+    <div class="contact-header">
+      <h3>Get In Touch</h3>
+      <p>Have questions about compatibility, warranties, or delivery? Write to us.</p>
+    </div>
+    <form id="contactForm">
+      <div class="form-group">
+        <label for="cname">Name</label>
+        <input type="text" id="cname" class="form-control" required placeholder="John Doe">
+      </div>
+      <div class="form-group">
+        <label for="cemail">Email</label>
+        <input type="email" id="cemail" class="form-control" required placeholder="john@example.com">
+      </div>
+      <div class="form-group">
+        <label for="cmessage">Message</label>
+        <textarea id="cmessage" class="form-control" required placeholder="How can we help?"></textarea>
+      </div>
+      <button class="btn-submit" type="submit">Send Message</button>
+    </form>
+  </div>
+
+</body>
+</html>
