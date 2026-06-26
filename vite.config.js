@@ -3,6 +3,16 @@ import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 
 export default defineConfig({
   base: './',
+  build: {
+    rollupOptions: {
+      output: {
+        // Disable hashing by using the original asset name and extension
+        assetFileNames: 'assets/[name][extname]',
+        chunkFileNames: 'assets/[name].js',
+        entryFileNames: 'assets/[name].js',
+      },
+    },
+  },
   plugins: [
     ViteImageOptimizer({
       test: /\.(jpe?g|png|gif|tiff|webp|svg)$/i,
